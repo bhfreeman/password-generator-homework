@@ -18,7 +18,9 @@
 
 
 // Thought Process
+
 // Button gets clicked
+//    some function runs after click
 // Prompt pops up to ask for number of characters in password
 //   write number to variable
 // Prompt asks for each criteria
@@ -33,6 +35,17 @@
 
 
 // Assignment Code
+
+// Add arrays for each type of character
+
+
+
+// Add function to select random item from array
+
+function getRandom(arr) {
+  return arr[Math.floor(Math.random() * arr.length)]
+}
+
 // Selects button with the id of generate
 var generateBtn = document.querySelector("#generate");
 
@@ -41,9 +54,24 @@ function writePassword() {
   var password = generatePassword();
   var passwordText = document.querySelector("#password");
 
-  passwordText.value = password;
+  passwordText.value = password;      
+
+}
+
+function generatePassword() {
+  //Prompt user for password length
+  //check if input is between 8 and 128
+  //confirm for character types
+
+  //add each character type selected to password
+  //trim password to set characters limit
+  
 
 }
 
 // Add event listener to generate button
+// runs write password function when the generateBtn button is clicked
 generateBtn.addEventListener("click", writePassword);
+
+
+
