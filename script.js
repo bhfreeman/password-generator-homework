@@ -168,6 +168,11 @@ function generatePassword() {
     var upper = confirm("Do you want to use upper case characters in your password?");
     console.log("upper is:" + upper);
 
+    if (!special && !num && !lower && !upper) {
+      alert("You must choose at least one character type to use for your password");
+      generatePassword();
+      
+    }
     //add each character type selected to password
 
     for (let i = 0; i <= length; i++) {
