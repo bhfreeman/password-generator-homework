@@ -39,8 +39,8 @@
 
 // Assignment Code
 
+var newPass = "";
 // Add arrays for each type of character
-
 // Array of special characters to be included in password
 var specialCharacters = [
   "@",
@@ -130,7 +130,6 @@ var upperCasedCharacters = [
 
 
 // Add function to select random item from array
-
 function getRandom(arr) {
   return arr[Math.floor(Math.random() * arr.length)]
 }
@@ -158,17 +157,41 @@ function generatePassword() {
   } else {
     //confirm for character types
     var special = confirm("Do you want to use special characters in your password?");
+    console.log("special is:" + special);
 
     var num = confirm("Do you want to use numeric characters in your password?");
+    console.log("num is:" + num);
 
     var lower = confirm("Do you want to use lower case characters in your password?");
+    console.log("lower is:" + lower);
 
     var upper = confirm("Do you want to use upper case characters in your password?");
+    console.log("upper is:" + upper);
 
+    //add each character type selected to password
 
+    for (let i = 0; i <= length; i++) {
+      if (special) {
+        newPass = newPass + getRandom(specialCharacters);
+      }
+      if (num) {
+        newPass = newPass + getRandom(numericCharacters);
+      }
+      if (upper) {
+        newPass = newPass + getRandom(upperCasedCharacters);
+      }
+      if (lower) {
+        newPass = newPass + getRandom(lowerCasedCharacters);
+      }
+      console.log(newPass);
+      
+    }
+
+    newPass = newPass.slice(0,length);
+
+    return newPass;
   }
 
-  //add each character type selected to password
   //trim password to set characters limit
 
 
