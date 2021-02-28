@@ -26,9 +26,12 @@
 // Prompt asks for each criteria
 //    store each criteria in bool variable
 // Generate Password
-//    create array of length specified by user
-//    use random function to assign value to each spot in array
-//    concatenate array as single variable
+//    create array of length specified by user?
+//    use random function to get values to put in  each spot in array
+//    check array to see if has each character type
+//    concatenate array as single string
+// 
+//  or do more simple way of just adding items to string and slicing at the end to trim to number of characters
 // Display Password
 
 
@@ -38,6 +41,92 @@
 
 // Add arrays for each type of character
 
+// Array of special characters to be included in password
+var specialCharacters = [
+  "@",
+  "%",
+  "+",
+  "\\",
+  "/",
+  "'",
+  "!",
+  "#",
+  "$",
+  "^",
+  "?",
+  ":",
+  ",",
+  ")",
+  "(",
+  "}",
+  "{",
+  "]",
+  "[",
+  "~",
+  "-",
+  "_",
+  ".",
+];
+// Array of numeric characters to be included in password
+var numericCharacters = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"];
+// Array of lowercase characters to be included in password
+var lowerCasedCharacters = [
+  "a",
+  "b",
+  "c",
+  "d",
+  "e",
+  "f",
+  "g",
+  "h",
+  "i",
+  "j",
+  "k",
+  "l",
+  "m",
+  "n",
+  "o",
+  "p",
+  "q",
+  "r",
+  "s",
+  "t",
+  "u",
+  "v",
+  "w",
+  "x",
+  "y",
+  "z",
+];
+// Array of uppercase characters to be included in password
+var upperCasedCharacters = [
+  "A",
+  "B",
+  "C",
+  "D",
+  "E",
+  "F",
+  "G",
+  "H",
+  "I",
+  "J",
+  "K",
+  "L",
+  "M",
+  "N",
+  "O",
+  "P",
+  "Q",
+  "R",
+  "S",
+  "T",
+  "U",
+  "V",
+  "W",
+  "X",
+  "Y",
+  "Z",
+];
 
 
 // Add function to select random item from array
@@ -60,12 +149,28 @@ function writePassword() {
 
 function generatePassword() {
   //Prompt user for password length
+  var length = prompt("Enter the desired length of you password");
+  console.log(length)
   //check if input is between 8 and 128
-  //confirm for character types
+  if (length < 8 || length > 128){
+    alert("You must choose a number between 8 and 128");
+    generatePassword();
+  } else {
+    //confirm for character types
+    var special = confirm("Do you want to use special characters in your password?");
+
+    var num = confirm("Do you want to use numeric characters in your password?");
+
+    var lower = confirm("Do you want to use lower case characters in your password?");
+
+    var upper = confirm("Do you want to use upper case characters in your password?");
+
+
+  }
 
   //add each character type selected to password
   //trim password to set characters limit
-  
+
 
 }
 
