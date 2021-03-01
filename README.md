@@ -11,3 +11,6 @@ https://github.com/bhfreeman/password-generator-homework
 
 ### github pages link
 https://bhfreeman.github.io/password-generator-homework/
+
+### screenshot
+![screenshot](./Screenshot.png)
